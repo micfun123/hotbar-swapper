@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tech.michaelparker</groupId>
-    <artifactId>HotBar-Swapper</artifactId>
+    <artifactId>HotBarSwapper</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>HotBar Swapper</name>
+    <name>HotBarSwapper</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -39,6 +39,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <outputFile>C:\Users\micha\Downloads\spigot test\plugins\hotbarswapper.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>

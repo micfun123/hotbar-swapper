@@ -1,4 +1,4 @@
-name: HotBar Swapper
+name: HotBarSwapper
 version: '${project.version}'
 main: tech.michaelparker.hotbarswapper.HotBarSwapper
 api-version: 1.20
