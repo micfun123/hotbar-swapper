@@ -32,14 +32,14 @@ public class SwapperHandler implements Listener {
 
         Bukkit.broadcastMessage("Swapping hotbars in " + time + " seconds!");
 
-        Player[] players = Bukkit.getOnlinePlayers().toArray(new Player[0]);
-        if (players.length == 0) {
-            return;
+        //swap the hotbars of all players
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            player.getInventory().setHeldItemSlot(rand.nextInt(9));
         }
 
-        for (Player player : players) {
-            int hotbar = rand.nextInt(9); // get a random hotbar between 0 and 8
-            player.getInventory().setHeldItemSlot(hotbar); // swap the hotbar
+        //if players are less than 2, then don't swap hotbars
+        if (Bukkit.getOnlinePlayers().size() < 2) {
+            return;
         }
 
         Bukkit.broadcastMessage("Hotbars have been swapped!");
