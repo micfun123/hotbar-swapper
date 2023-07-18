@@ -16,7 +16,7 @@ public class SwapperHandler implements Listener {
         Player player = event.getPlayer();
         // Your custom logic when a player joins
         Bukkit.broadcastMessage("you have`"+ Bukkit.getOnlinePlayers().size() + " amount of people");
-        if (Bukkit.getOnlinePlayers().size() >= 2) {
+        if (Bukkit.getOnlinePlayers().size() == 2) {
             swapHotbar();
         }
     }
