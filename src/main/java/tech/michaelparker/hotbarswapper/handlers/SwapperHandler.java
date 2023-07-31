@@ -24,25 +24,24 @@ public class SwapperHandler implements Listener {
     private void swapHotbar() {
         Random rand = new Random();
         int time = rand.nextInt(5) + 1; // get a random time between 1 and 5 seconds
-        try {
-            Thread.sleep(time * 1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        Bukkit.broadcastMessage("Swapping hotbars in " + time + " seconds!");
+        Bukkit.getScheduler().runTaskLater(Bukkit.getPluginManager().getPlugin("HotBarSwapper"), () -> {
+            Bukkit.broadcastMessage("Swapping hotbars in " + time + " seconds!");
 
-        //swap the hotbars of all players
-        for (Player player : Bukkit.getOnlinePlayers()) {
-            player.getInventory().setHeldItemSlot(rand.nextInt(9));
-        }
+            // Swap the full hotbars of all players with another player
+            for (Player player : Bukkit.getOnlinePlayers()) {
+                Player randomPlayer = (Player) Bukkit.getOnlinePlayers().toArray()[rand.nextInt(Bukkit.getOnlinePlayers().size())];
+                player.getInventory().setContents(randomPlayer.getInventory().getContents());
+            }
 
-        //if players are less than 2, then don't swap hotbars
-        if (Bukkit.getOnlinePlayers().size() < 2) {
-            return;
-        }
+            // If players are less than 2, then don't swap hotbars
+            if (Bukkit.getOnlinePlayers().size() < 2) {
+                return;
+            }
 
-        Bukkit.broadcastMessage("Hotbars have been swapped!");
-        swapHotbar(); // uncomment this line if you want to keep swapping hotbars
+            Bukkit.broadcastMessage("Hotbars have been swapped!");
+            swapHotbar(); // uncomment this line if you want to keep swapping hotbars
+        }, time * 20); // Convert seconds to ticks (1 second = 20 ticks)
+
     }
 }
