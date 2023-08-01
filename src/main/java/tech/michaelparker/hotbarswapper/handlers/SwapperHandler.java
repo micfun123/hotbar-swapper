@@ -29,7 +29,7 @@ public class SwapperHandler implements Listener, CommandExecutor {
                 // Check if there are at least two players online to perform the swap
                 if (Bukkit.getOnlinePlayers().size() >= 2) {
                     swapHotbar();
-                    Bukkit.broadcastMessage("Hotbars have been swapped!");
+                    Bukkit.broadcastMessage("Hotbars have been swapper has started! It will end when there are less than 2 players on the server. A swap will happen randomly between 1 second and 5 minutes.");
                 } else {
                     player.sendMessage("Not enough players online to perform the swap.");
                 }
