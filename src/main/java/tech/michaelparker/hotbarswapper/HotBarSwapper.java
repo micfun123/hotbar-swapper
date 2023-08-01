@@ -12,7 +12,7 @@ public final class HotBarSwapper extends JavaPlugin {
         // Plugin startup logic
         getLogger().info("HotBarSwapper has been enabled!");
         //load the handler
-        getServer().getPluginManager().registerEvents(new SwapperHandler(), this);
+        new SwapperHandler(this);
 
 
     }

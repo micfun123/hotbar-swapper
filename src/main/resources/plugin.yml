@@ -1,8 +1,8 @@
 name: HotBarSwapper
-version: '${project.version}'
+version: '1.0.0' # Replace this with the actual version of your plugin
 main: tech.michaelparker.hotbarswapper.HotBarSwapper
 api-version: 1.20
 commands:
-  startSwapping:
-    description: Start swapping hotbars
-    usage: /<command>¬
+  startswap:
+    description: Start the hotbar swapping process for all players online.
+    usage: /<command>
